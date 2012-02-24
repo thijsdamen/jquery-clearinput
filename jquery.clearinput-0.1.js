@@ -4,7 +4,7 @@
  * Clears default values from input fields on submit.
  * 
  * Version: 0.1, 24 February, 2012
- * Author: Thijs Damen <http://thijsdamen.nl, http://twitter.com/@/thijsdamen>
+ * Author: Thijs Damen <http://thijsdamen.nl, http://twitter.com/#!/thijsdamen>
  */
 (function($) {
 
