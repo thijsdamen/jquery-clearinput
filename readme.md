@@ -31,32 +31,32 @@ Customized settings:
     
 Options
 --------------------------------------
-clearTextFields: true/false
+```clearTextFields```: true/false<br />
 <i>Whether or not <input type="text" /> elements should be cleared/replaced.</i>
 
-clearPasswordFields: true/false
+```clearPasswordFields```: true/false<br />
 <i>Whether or not <input type="password" /> elements should be cleared/replaced.</i>
 
-clearTextAreas: true/false
+```clearTextAreas```: true/false<br />
 <i>Whether or not <textarea /> elements should be cleared/replaced.</i>
     
-clearAll: true/false
+```clearAll```: true/false<br />
 <i>if ```true``` it will ignore the ```clearClassName``` setting and clear all elements in the form. Still respects ```clearTextFields```, ```clearPasswordFields``` and ```clearTextAreas```</i>
 
-clearClassName: (string)
+```clearClassName```: (string)<br />
 <i>customize the classname of fields that need to be cleared. default: ```clear-input```</i>
 
-replaceValues: true/false
+```replaceValues```: true/false<br />
 <i>if ```true``` it will try to replace fields that still contain their placeholder value with a preset value (based on ```replaceValueDataName```)
 
-replaceValueDataName: (string)
+```replaceValueDataName```: (string)<br />
 <i>customize the data-* field of fields whos value will be replaced. default: ```replace-width```
 <i>example: <input type="text" value="green" name="color" data-replace-width="red" /> ```green``` will be replaced by ```red``` if the value of the field is ```green``` on submit<i>
 
-valueStorageDataName: (string)
+```valueStorageDataName```: (string)<br />
 <i>customize the data-* field where placeholder values are stored. default: ```default-value```</i>
 
-clearOnSubmit: true/false
+```clearOnSubmit```: true/false<br />
 <i>Whether form fields that contain their default value should be emptied. Won't clear replaced values</i>
 
 Functionality
