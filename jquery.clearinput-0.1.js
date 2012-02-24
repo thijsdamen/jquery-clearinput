@@ -19,7 +19,7 @@
             replaceValues:               true,            // Whether or not fields that have not been entered should be replaced
             replaceValueDataName:        'replace-with',  // Default data-* value to replace non-entered values with (only applies if replaceValues is true)
             valueStorageDataName:        'default-value', // Default data-* name script will store values to.
-            clearOnSubmit:                true            // Wheter or not default form values should be emptied before submit (still replaces values if replaceValues is true)
+            clearOnSubmit:               true             // Wheter or not default form values should be emptied before submit (still replaces values if replaceValues is true)
         }
 
         // current instance of the object
