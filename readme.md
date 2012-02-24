@@ -9,7 +9,7 @@ No more, mostly to suit my own needs and hopefully someone else's this plugin wa
 
 Goals of the plugin
 --------------------------------------
-Make it <b>very</b> easy to use.
+Make it <b>very</b> easy to clear input fields with placeholder values.
 
 Basic Usage
 --------------------------------------
@@ -47,11 +47,11 @@ Options
 <i>customize the classname of fields that need to be cleared. default: ```clear-input```</i>
 
 ```replaceValues```: true/false<br />
-<i>if ```true``` it will try to replace fields that still contain their placeholder value with a preset value (based on ```replaceValueDataName```)
+<i>if ```true``` it will try to replace fields that still contain their placeholder value with a preset value (based on ```replaceValueDataName```)</i>
 
 ```replaceValueDataName```: (string)<br />
-<i>customize the data-* field of fields whos value will be replaced. default: ```replace-width```
-<i>example: <input type="text" value="green" name="color" data-replace-width="red" /> ```green``` will be replaced by ```red``` if the value of the field is ```green``` on submit<i>
+<i>customize the data-* field of fields whos value will be replaced. default: ```replace-width```</i>
+<i>example: <input type="text" value="green" name="color" data-replace-width="red" /> ```green``` will be replaced by ```red``` if the value of the field is ```green``` on submit</i>
 
 ```valueStorageDataName```: (string)<br />
 <i>customize the data-* field where placeholder values are stored. default: ```default-value```</i>
