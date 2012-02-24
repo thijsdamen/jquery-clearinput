@@ -11,6 +11,52 @@ Goals of the plugin
 --------------------------------------
 Make it <b>very</b> easy to use.
 
+Basic Usage
+--------------------------------------
+Default settings:
+    $('#form').clearInput();
+    
+Customized settings:
+
+	// All settings are explained in code (also below)
+    $('#form').clearInput({
+    	clearTextFields: true,
+    	clearPasswordFields: false,
+    	clearTextAreas: true,
+        clearAll: false 
+    });
+    
+    
+    
+Options
+--------------------------------------
+clearTextFields: true/false
+<i>Whether or not <input type="text" /> elements should be cleared/replaced.</i>
+
+clearPasswordFields: true/false
+<i>Whether or not <input type="password" /> elements should be cleared/replaced.</i>
+
+clearTextAreas: true/false
+<i>Whether or not <textarea /> elements should be cleared/replaced.</i>
+    
+clearAll: true/false
+<i>if ```true``` it will ignore the ```clearClassName``` setting and clear all elements in the form. Still respects ```clearTextFields```, ```clearPasswordFields``` and ```clearTextAreas```</i>
+
+clearClassName: (string)
+<i>customize the classname of fields that need to be cleared. default: ```clear-input```</i>
+
+replaceValues: true/false
+<i>if ```true``` it will try to replace fields that still contain their placeholder value with a preset value (based on ```replaceValueDataName```)
+
+replaceValueDataName: (string)
+<i>customize the data-* field of fields whos value will be replaced. default: ```replace-width```
+<i>example: <input type="text" value="green" name="color" data-replace-width="red" /> ```green``` will be replaced by ```red``` if the value of the field is ```green``` on submit<i>
+
+valueStorageDataName: (string)
+<i>customize the data-* field where placeholder values are stored. default: ```default-value```</i>
+
+clearOnSubmit: true/false
+<i>Whether form fields that contain their default value should be emptied. Won't clear replaced values</i>
 
 Functionality
 --------------------------------------
