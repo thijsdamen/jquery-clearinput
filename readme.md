@@ -14,6 +14,7 @@ Make it <b>very</b> easy to use.
 Basic Usage
 --------------------------------------
 Default settings:
+
     $('#form').clearInput();
     
 Customized settings:
