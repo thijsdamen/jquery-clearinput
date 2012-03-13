@@ -19,7 +19,8 @@
             replaceValues:               true,            // Whether or not fields that have not been entered should be replaced
             replaceValueDataName:        'replace-with',  // Default data-* value to replace non-entered values with (only applies if replaceValues is true)
             valueStorageDataName:        'default-value', // Default data-* name script will store values to.
-            clearOnSubmit:               true             // Wheter or not default form values should be emptied before submit (still replaces values if replaceValues is true)
+            clearOnSubmit:               true,            // Wheter or not default form values should be emptied before submit (still replaces values if replaceValues is true)
+            readablePasswordHint:        true             // Wether or not password hint values should be readable or not
         }
 
         // current instance of the object
@@ -29,6 +30,8 @@
         // References to the element plugin is attached to
         var $element = $(element), 
              element = element;    
+        
+        var passwordFields = [];
         
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
@@ -47,6 +50,9 @@
                 $('input, textarea', $element).each(function(index, formElement) {
                     $formElement = $(formElement);
                     replaceElementValue($formElement);
+                    for (i = 0; i < passwordFields.count; i++) {
+                    	passwordFields[i].remove();
+                    }
                 });
                 return true;
             });
@@ -72,6 +78,27 @@
                             $blurredElement.val($blurredElement.data(plugin.settings.valueStorageDataName));
                         }
                     });
+                }
+                
+                if ($formElement.attr('type') == 'password' && plugin.settings.clearPasswordFields && plugin.settings.readablePasswordHint) {
+                	$clone = $formElement.clone();
+                	$formElement.val('');
+                	$clone.attr('type', 'text');
+                	clearElement($clone);
+                	$clone.focus(function() {
+                		$(this).next().show(0).focus();
+                		$(this).hide();
+                	});
+                	$formElement.blur(function() {
+                		$blurredElement = $(this);
+                		if ($blurredElement.val().length == 0) {
+                			$blurredElement.hide();
+                			$blurredElement.prev().show(0);
+                		}
+                	});
+                	passwordFields.push($clone);
+                	$clone.insertBefore($formElement);
+                	$formElement.hide(0);
                 }
             }
         }
